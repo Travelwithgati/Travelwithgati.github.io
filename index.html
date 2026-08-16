@@ -1,334 +1,171 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#0b2d5c">
-  <meta name="description" content="Gati Travels taxi services in Uttarakhand and across India. Sedan, Ertiga and Innova for local, outstation, airport and sightseeing trips.">
-  <title>Gati Travels | Taxi Services</title>
-  <style>
-    :root{
-      --navy:#0b2d5c;
-      --blue:#114b96;
-      --red:#df2027;
-      --gold:#f6c94b;
-      --ink:#10213d;
-      --muted:#667085;
-      --soft:#f5f7fb;
-      --white:#fff;
-      --shadow:0 14px 35px rgba(16,33,61,.10);
-      --radius:20px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-      color:var(--ink);
-      background:#fff;
-      padding-bottom:76px;
-    }
-    a{text-decoration:none;color:inherit}
-    img{display:block;max-width:100%}
-    .topbar{
-      background:var(--navy);color:#fff;font-size:13px;
-      padding:9px 16px;text-align:center;
-    }
-    .topbar a{font-weight:700}
-    header{
-      position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);
-      backdrop-filter:blur(10px);border-bottom:1px solid #e8edf5;
-    }
-    .nav{
-      max-width:1120px;margin:auto;padding:13px 16px;display:flex;
-      align-items:center;justify-content:space-between;gap:12px;
-    }
-    .brand{font-size:28px;font-weight:900;letter-spacing:-1px}
-    .brand .g{color:var(--navy)} .brand .t{color:var(--red)}
-    .nav-cta{
-      background:var(--red);color:#fff;padding:12px 16px;border-radius:12px;
-      font-weight:800;box-shadow:0 8px 18px rgba(223,32,39,.20)
-    }
-    .hero{
-      background:linear-gradient(180deg,#f6f9ff 0%,#fff 100%);
-      padding:20px 16px 28px;
-    }
-    .hero-wrap{max-width:1120px;margin:auto}
-    .hero-card{
-      overflow:hidden;border-radius:24px;background:var(--navy);
-      box-shadow:var(--shadow);
-    }
-    .hero-photo{
-      position:relative;height:245px;overflow:hidden;
-    }
-    .hero-photo img{width:100%;height:100%;object-fit:cover}
-    .hero-photo:after{
-      content:"";position:absolute;inset:0;
-      background:linear-gradient(180deg,rgba(11,45,92,.08),rgba(11,45,92,.58));
-    }
-    .hero-copy{padding:23px 20px 22px;color:#fff}
-    .eyebrow{
-      display:inline-block;color:var(--gold);font-size:12px;font-weight:900;
-      letter-spacing:1.7px;margin-bottom:10px
-    }
-    h1{font-size:38px;line-height:1.05;margin:0 0 12px;letter-spacing:-1.5px}
-    h1 span{color:#ff4b52}
-    .hero-copy p{margin:0;color:#e6edf7;font-size:16px;line-height:1.65}
-    .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
-    .btn{
-      display:flex;align-items:center;justify-content:center;min-height:50px;
-      border-radius:13px;font-weight:900;font-size:15px
-    }
-    .btn-red{background:var(--red);color:#fff}
-    .btn-blue{background:#fff;color:var(--navy)}
-    .section{padding:42px 16px}
-    .section.alt{background:var(--soft)}
-    .container{max-width:1120px;margin:auto}
-    .section-head{text-align:center;margin-bottom:24px}
-    .section-head .kicker{color:var(--red);font-size:12px;font-weight:900;letter-spacing:1.5px}
-    h2{font-size:30px;line-height:1.15;margin:7px 0 8px;letter-spacing:-.8px}
-    .lead{color:var(--muted);margin:0;line-height:1.6;font-size:15px}
-    .cards{display:grid;grid-template-columns:1fr;gap:14px}
-    .card{
-      background:#fff;border:1px solid #e8edf5;border-radius:18px;padding:20px;
-      box-shadow:0 8px 24px rgba(16,33,61,.05)
-    }
-    .icon{
-      width:46px;height:46px;border-radius:13px;background:#edf4ff;color:var(--blue);
-      display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:12px
-    }
-    .card h3{margin:0 0 7px;font-size:19px}
-    .card p{margin:0;color:var(--muted);line-height:1.55;font-size:14px}
-    .fleet{
-      display:grid;grid-template-columns:1fr;gap:14px
-    }
-    .fleet-card{overflow:hidden;background:#fff;border:1px solid #e8edf5;border-radius:18px;box-shadow:0 8px 24px rgba(16,33,61,.06)}
-    .fleet-card .fleet-icon{font-size:42px;text-align:center;padding:18px 10px 6px}
-    .fleet-body{padding:0 18px 18px}
-    .fleet-body h3{margin:4px 0 5px;font-size:19px}
-    .fleet-body p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
-    .trust{
-      display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px
-    }
-    .trust-item{
-      background:#fff;border:1px solid #e8edf5;border-radius:16px;padding:15px;
-      text-align:center
-    }
-    .trust-item strong{display:block;font-size:22px;color:var(--navy)}
-    .trust-item span{display:block;color:var(--muted);font-size:12px;margin-top:4px}
-    .about{
-      display:grid;gap:18px
-    }
-    .about-photo{border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
-    .about-photo img{width:100%;height:260px;object-fit:cover}
-    .about-copy h2{text-align:left}
-    .checklist{padding:0;margin:17px 0 0;list-style:none;display:grid;gap:11px}
-    .checklist li{display:flex;gap:9px;align-items:flex-start;font-size:14px;line-height:1.45}
-    .check{color:#16834a;font-weight:900}
-    .contact{
-      background:linear-gradient(135deg,var(--navy),#123f78);
-      color:#fff;border-radius:24px;padding:25px 20px;box-shadow:var(--shadow)
-    }
-    .contact h2{margin-top:0}
-    .contact p{color:#dbe7f7;line-height:1.6}
-    .contact-grid{display:grid;gap:10px;margin-top:18px}
-    .contact-link{
-      background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.15);
-      padding:14px;border-radius:13px;font-weight:800
-    }
-    .contact .actions{margin-top:12px}
-    footer{background:#071f40;color:#cbd8ea;text-align:center;padding:25px 16px;font-size:13px}
-    footer strong{color:#fff}
-    .bottom-bar{
-      position:fixed;left:0;right:0;bottom:0;z-index:100;background:#fff;
-      border-top:1px solid #e4e8ef;box-shadow:0 -8px 25px rgba(16,33,61,.10);
-      padding:9px 10px calc(9px + env(safe-area-inset-bottom));
-      display:grid;grid-template-columns:1fr 1fr;gap:9px
-    }
-    .bottom-bar a{min-height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:900}
-    .call{background:var(--red);color:#fff}
-    .wa{background:#16a34a;color:#fff}
-    @media (min-width:700px){
-      body{padding-bottom:0}
-      .topbar{text-align:right;padding-left:24px;padding-right:24px}
-      .hero{padding:34px 24px 45px}
-      .hero-card{display:grid;grid-template-columns:1.05fr .95fr}
-      .hero-photo{height:auto;min-height:430px;order:2}
-      .hero-copy{display:flex;flex-direction:column;justify-content:center;padding:42px}
-      h1{font-size:52px}
-      .cards{grid-template-columns:repeat(3,1fr)}
-      .fleet{grid-template-columns:repeat(3,1fr)}
-      .trust{grid-template-columns:repeat(4,1fr)}
-      .about{grid-template-columns:1fr 1fr;align-items:center}
-      .about-photo img{height:360px}
-      .contact-grid{grid-template-columns:repeat(2,1fr)}
-      .bottom-bar{display:none}
-      .actions{max-width:440px}
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071a33">
+<meta name="description" content="Gati Travels — trusted taxi services in Uttarakhand and across India. Local, outstation, airport pickup and sightseeing.">
+<title>Gati Travels | Premium Taxi Services</title>
+<style>
+:root{
+  --navy:#071a33;--blue:#0b3b82;--red:#e5232d;--gold:#f2c14e;
+  --ink:#0b1728;--muted:#64748b;--soft:#f5f8fc;--white:#fff;
+  --shadow:0 18px 50px rgba(7,26,51,.13);--radius:24px;
+}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}
+img{display:block;width:100%;object-fit:cover}
+.container{width:min(1120px,92%);margin:auto}
+.topbar{background:var(--navy);color:#dce8f8;font-size:13px}
+.topbar .container{display:flex;justify-content:space-between;gap:12px;padding:9px 0}
+.header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid #e8edf5}
+.nav{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.logo{font-size:27px;font-weight:900;letter-spacing:-1px}.logo span{color:var(--red)}
+.navlinks{display:flex;align-items:center;gap:24px;font-weight:700;font-size:14px}.navlinks a:hover{color:var(--red)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 19px;border-radius:13px;font-weight:850;border:1px solid transparent;transition:.2s}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 10px 25px rgba(229,35,45,.2)}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-light{background:#fff;border-color:#dce5f0;color:var(--navy)}
+.btn:hover{transform:translateY(-2px)}
+.hero{position:relative;min-height:690px;display:flex;align-items:center;overflow:hidden;background:#071a33}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,17,34,.92) 0%,rgba(4,17,34,.72) 48%,rgba(4,17,34,.18) 100%),url("assets/ertiga-mountains.jpg") center/cover}
+.hero .container{position:relative;z-index:1;color:#fff;padding:80px 0}
+.eyebrow{display:inline-flex;gap:9px;align-items:center;color:var(--gold);font-weight:900;letter-spacing:2px;font-size:12px;text-transform:uppercase}
+.eyebrow:before{content:"";width:28px;height:2px;background:var(--gold)}
+h1{font-size:clamp(43px,7vw,76px);line-height:1.02;letter-spacing:-3px;max-width:780px;margin:18px 0}
+h1 span{color:#ff4a52}
+.hero p{font-size:18px;color:#dce7f4;max-width:650px;margin:0 0 28px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.trust{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.pill{padding:9px 13px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.09);border-radius:999px;font-size:13px;font-weight:700}
+section{padding:84px 0}
+.section-head{max-width:680px;margin-bottom:34px}
+.section-head .eyebrow{color:var(--red)}.section-head .eyebrow:before{background:var(--red)}
+h2{font-size:clamp(30px,5vw,48px);line-height:1.08;letter-spacing:-1.5px;margin:12px 0}
+.lead{color:var(--muted);font-size:17px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border:1px solid #e7edf5;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.card-body{padding:24px}.card h3{margin:0 0 7px;font-size:21px}.card p{margin:0;color:var(--muted);font-size:14px}
+.icon{width:46px;height:46px;border-radius:14px;background:#edf4ff;color:var(--blue);display:grid;place-items:center;font-size:22px;margin-bottom:17px}
+.fleet{background:var(--soft)}
+.fleet-card{position:relative;min-height:390px;border-radius:var(--radius);overflow:hidden;background:#0a1d35;color:#fff}
+.fleet-card img{height:100%;position:absolute;inset:0}
+.fleet-card:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(3,14,28,.93),rgba(3,14,28,.08) 72%)}
+.fleet-copy{position:absolute;z-index:1;left:22px;right:22px;bottom:22px}
+.fleet-copy h3{font-size:27px;margin:0 0 4px}.fleet-copy p{margin:0;color:#d9e4f0;font-size:14px}
+.fleet-copy .tag{display:inline-block;margin-bottom:9px;background:rgba(242,193,78,.16);color:var(--gold);padding:5px 9px;border-radius:99px;font-size:11px;font-weight:900}
+.no-photo{background:radial-gradient(circle at 70% 20%,#174c96,#071a33 58%);display:flex;align-items:flex-end}
+.no-photo:before{content:"";position:absolute;inset:12%;border:1px solid rgba(255,255,255,.12);border-radius:50%}
+.no-photo .car-mark{font-size:74px;opacity:.9;margin-bottom:7px}
+.booking{background:linear-gradient(135deg,var(--navy),#0b3b82);color:#fff}
+.booking .section-head .eyebrow{color:var(--gold)}.booking .section-head .eyebrow:before{background:var(--gold)}
+.booking .lead{color:#cbd8e8}
+.booking-box{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:stretch}
+.contact-card{background:#fff;color:var(--ink);border-radius:24px;padding:28px;box-shadow:var(--shadow)}
+.contact-row{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid #edf1f6}.contact-row:last-child{border-bottom:0}
+.contact-row b{display:block}.contact-row span{color:var(--muted);font-size:14px}
+.gallery{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-auto-rows:190px;gap:12px}
+.gallery img{height:100%;border-radius:18px}.gallery .big{grid-row:span 2}
+footer{background:#041224;color:#aebdd0;padding:28px 0;font-size:13px}.footer-row{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.mobile-bar{display:none}
+@media(max-width:800px){
+ .topbar{display:none}.nav{min-height:66px}.navlinks{display:none}.nav .btn{padding:11px 14px;font-size:13px}
+ .hero{min-height:670px}.hero .container{padding:60px 0}.hero p{font-size:16px}.hero h1{letter-spacing:-2px}
+ .grid3,.booking-box{grid-template-columns:1fr}.grid3{gap:14px}
+ section{padding:65px 0}.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:150px}.gallery .big{grid-column:span 2;grid-row:span 2}
+ .mobile-bar{position:fixed;display:grid;grid-template-columns:1fr 1fr;gap:8px;left:10px;right:10px;bottom:10px;z-index:50;background:rgba(4,18,36,.94);padding:8px;border-radius:17px;box-shadow:0 15px 40px rgba(0,0,0,.3)}
+ .mobile-bar .btn{padding:12px}
+ footer{padding-bottom:90px}
+}
+</style>
 </head>
 <body>
-  <div class="topbar">
-    📞 <a href="tel:+917247805108">7247805108</a>
-    &nbsp; | &nbsp;
-    ✉️ <a href="mailto:travelsgati@gmail.com">travelsgati@gmail.com</a>
+<div class="topbar"><div class="container"><span>📍 Uttarakhand • Local & Outstation Taxi</span><span>📞 7247805108 &nbsp; • &nbsp; ✉️ travelsgati@gmail.com</span></div></div>
+
+<header class="header">
+ <div class="container nav">
+  <a class="logo" href="#home">Gati <span>Travels</span></a>
+  <nav class="navlinks"><a href="#services">Services</a><a href="#fleet">Fleet</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></nav>
+  <a class="btn btn-red" href="tel:+917247805108">Book a Taxi</a>
+ </div>
+</header>
+
+<main id="home">
+<section class="hero">
+ <div class="container">
+  <div class="eyebrow">Trusted Taxi Services</div>
+  <h1>Travel <span>comfortably.</span><br>Arrive confidently.</h1>
+  <p>Professional local, outstation and sightseeing taxi services from Uttarakhand to destinations across India — with clean vehicles and dependable service.</p>
+  <div class="actions">
+   <a class="btn btn-red" href="tel:+917247805108">📞 Call Now</a>
+   <a class="btn btn-light" href="https://wa.me/917247805108?text=Hello%20Gati%20Travels,%20I%20want%20to%20book%20a%20taxi.">💬 WhatsApp</a>
   </div>
+  <div class="trust"><span class="pill">✓ Local & Outstation</span><span class="pill">✓ Airport / Railway Pickup</span><span class="pill">✓ Mussoorie Sightseeing</span></div>
+ </div>
+</section>
 
-  <header>
-    <nav class="nav">
-      <a class="brand" href="#"><span class="g">Gati</span> <span class="t">Travels</span></a>
-      <a class="nav-cta" href="https://wa.me/917247805108?text=Hello%20Gati%20Travels%2C%20I%20want%20to%20book%20a%20taxi." target="_blank" rel="noopener">Book a Taxi</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="hero-wrap">
-        <div class="hero-card">
-          <div class="hero-photo">
-            <img src="office-exterior.png" alt="Gati Travels taxi office exterior" loading="eager">
-          </div>
-          <div class="hero-copy">
-            <div class="eyebrow">TRUSTED TAXI SERVICES</div>
-            <h1>Travel comfortably with <span>Gati Travels</span></h1>
-            <p>Reliable taxi services for local, outstation, airport, railway and sightseeing journeys across Uttarakhand and India.</p>
-            <div class="actions">
-              <a class="btn btn-red" href="tel:+917247805108">📞 Call Now</a>
-              <a class="btn btn-blue" href="https://wa.me/917247805108?text=Hello%20Gati%20Travels%2C%20I%20want%20to%20book%20a%20taxi." target="_blank" rel="noopener">💬 WhatsApp</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <div class="kicker">WHAT WE OFFER</div>
-          <h2>Taxi services made simple</h2>
-          <p class="lead">Comfortable cars, dependable drivers and easy booking for your journey.</p>
-        </div>
-        <div class="cards">
-          <article class="card">
-            <div class="icon">🏔️</div>
-            <h3>Uttarakhand Sightseeing</h3>
-            <p>Explore Mussoorie and other Uttarakhand destinations comfortably with a local taxi service.</p>
-          </article>
-          <article class="card">
-            <div class="icon">🚕</div>
-            <h3>Local & Outstation</h3>
-            <p>Book a taxi for city travel, nearby trips or longer outstation journeys.</p>
-          </article>
-          <article class="card">
-            <div class="icon">✈️</div>
-            <h3>Airport & Railway</h3>
-            <p>Convenient pickup and drop service for airports and railway stations.</p>
-          </article>
-          <article class="card">
-            <div class="icon">⭐</div>
-            <h3>One-Way & Round Trips</h3>
-            <p>Choose a one-way ride or a return journey based on your travel plan.</p>
-          </article>
-          <article class="card">
-            <div class="icon">👨‍👩‍👧</div>
-            <h3>Family Travel</h3>
-            <p>Comfortable vehicle options for families, couples and small groups.</p>
-          </article>
-          <article class="card">
-            <div class="icon">💼</div>
-            <h3>Business Travel</h3>
-            <p>Professional, convenient transport for meetings, visits and work travel.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section alt">
-      <div class="container">
-        <div class="section-head">
-          <div class="kicker">OUR FLEET</div>
-          <h2>Choose the right car</h2>
-          <p class="lead">Vehicle options for different family sizes and travel needs.</p>
-        </div>
-        <div class="fleet">
-          <article class="fleet-card">
-            <div class="fleet-icon">🚘</div>
-            <div class="fleet-body">
-              <h3>Sedan</h3>
-              <p>A comfortable choice for couples, small families and business travel.</p>
-            </div>
-          </article>
-          <article class="fleet-card">
-            <div class="fleet-icon">🚙</div>
-            <div class="fleet-body">
-              <h3>Ertiga</h3>
-              <p>Spacious and practical for family trips and small groups.</p>
-            </div>
-          </article>
-          <article class="fleet-card">
-            <div class="fleet-icon">🚐</div>
-            <div class="fleet-body">
-              <h3>Innova</h3>
-              <p>Extra comfort and space for longer journeys and larger groups.</p>
-            </div>
-          </article>
-        </div>
-        <div class="trust">
-          <div class="trust-item"><strong>24/7</strong><span>Booking support</span></div>
-          <div class="trust-item"><strong>3+</strong><span>Vehicle options</span></div>
-          <div class="trust-item"><strong>Local</strong><span>Uttarakhand expertise</span></div>
-          <div class="trust-item"><strong>All India</strong><span>Outstation travel</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container about">
-        <div class="about-photo">
-          <img src="office-interior.png" alt="Gati Travels office interior" loading="lazy">
-        </div>
-        <div class="about-copy">
-          <div class="kicker">WHY GATI TRAVELS</div>
-          <h2>Professional service from booking to destination</h2>
-          <p class="lead">We focus on a clean booking experience, comfortable vehicles and dependable service for every trip.</p>
-          <ul class="checklist">
-            <li><span class="check">✓</span><span>Easy phone and WhatsApp booking</span></li>
-            <li><span class="check">✓</span><span>Comfortable Sedan, Ertiga and Innova options</span></li>
-            <li><span class="check">✓</span><span>Local, outstation, airport and sightseeing trips</span></li>
-            <li><span class="check">✓</span><span>Clear, direct communication with our travel team</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section alt" id="contact">
-      <div class="container">
-        <div class="contact">
-          <div class="kicker" style="color:#f6c94b">READY TO TRAVEL?</div>
-          <h2>Book your taxi today</h2>
-          <p>Tell us your pickup, destination and preferred vehicle. We'll get back to you through WhatsApp or phone.</p>
-          <div class="contact-grid">
-            <a class="contact-link" href="tel:+917247805108">📞 7247805108</a>
-            <a class="contact-link" href="mailto:travelsgati@gmail.com">✉️ travelsgati@gmail.com</a>
-          </div>
-          <div class="actions">
-            <a class="btn btn-red" href="tel:+917247805108">Call Gati Travels</a>
-            <a class="btn btn-blue" href="https://wa.me/917247805108?text=Hello%20Gati%20Travels%2C%20I%20want%20to%20book%20a%20taxi.%0A%0APickup%3A%20%0ADestination%3A%20%0ADate%3A%20%0AVehicle%3A%20" target="_blank" rel="noopener">WhatsApp Booking</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <strong>Gati Travels</strong><br>
-    Your trusted partner for safe, comfortable & affordable taxi services.<br><br>
-    © 2026 Gati Travels. All rights reserved.
-  </footer>
-
-  <div class="bottom-bar">
-    <a class="call" href="tel:+917247805108">📞 Call Now</a>
-    <a class="wa" href="https://wa.me/917247805108?text=Hello%20Gati%20Travels%2C%20I%20want%20to%20book%20a%20taxi." target="_blank" rel="noopener">💬 WhatsApp</a>
+<section id="services">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">What we offer</div><h2>Made for easy journeys.</h2><p class="lead">Simple booking, comfortable travel and a professional experience from pickup to drop.</p></div>
+  <div class="grid3">
+   <article class="card"><div class="card-body"><div class="icon">🚕</div><h3>Local Taxi</h3><p>Comfortable city and nearby travel for errands, meetings, hotels and daily rides.</p></div></article>
+   <article class="card"><div class="card-body"><div class="icon">🏔️</div><h3>Sightseeing</h3><p>Explore Mussoorie and Uttarakhand with a driver who knows the local routes.</p></div></article>
+   <article class="card"><div class="card-body"><div class="icon">🧳</div><h3>Outstation Trips</h3><p>One-way and round-trip journeys across Uttarakhand and India.</p></div></article>
+   <article class="card"><div class="card-body"><div class="icon">✈️</div><h3>Airport Pickup</h3><p>Pre-booked airport transfers designed to keep your journey smooth and on time.</p></div></article>
+   <article class="card"><div class="card-body"><div class="icon">🚆</div><h3>Railway Pickup</h3><p>Convenient pickup and drop service for railway stations and connecting travel.</p></div></article>
+   <article class="card"><div class="card-body"><div class="icon">⭐</div><h3>Reliable Service</h3><p>Clear communication, courteous service and a comfortable ride every time.</p></div></article>
   </div>
+ </div>
+</section>
+
+<section id="fleet" class="fleet">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">Our fleet</div><h2>Choose the right ride.</h2><p class="lead">We currently feature our own Ertiga photography. Sedan and Innova availability can be confirmed when you book.</p></div>
+  <div class="grid3">
+   <article class="fleet-card"><img src="assets/ertiga-mountains.jpg" alt="Gati Travels Ertiga in the mountains"><div class="fleet-copy"><span class="tag">POPULAR</span><h3>Ertiga</h3><p>Spacious • Family friendly • Great for sightseeing & outstation</p></div></article>
+   <article class="fleet-card no-photo"><div class="fleet-copy"><div class="car-mark">🚘</div><span class="tag">ON REQUEST</span><h3>Sedan</h3><p>Comfortable option for couples, business travel and airport transfers.</p></div></article>
+   <article class="fleet-card no-photo"><div class="fleet-copy"><div class="car-mark">🚐</div><span class="tag">ON REQUEST</span><h3>Innova</h3><p>Extra space for families and groups. Ask us for current availability.</p></div></article>
+  </div>
+ </div>
+</section>
+
+<section id="gallery">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">Our journeys</div><h2>Real vehicle. Real roads.</h2><p class="lead">A few photographs from the Gati Travels journey.</p></div>
+  <div class="gallery">
+   <img class="big" src="assets/ertiga-mountains.jpg" alt="Ertiga on a mountain road">
+   <img src="assets/ertiga-front.jpg" alt="Ertiga front view">
+   <img src="assets/ertiga-rear.jpg" alt="Ertiga rear view">
+   <img src="assets/ertiga-detail.jpg" alt="Ertiga detail">
+   <img src="assets/office-exterior.png" alt="Gati Travels office exterior">
+  </div>
+ </div>
+</section>
+
+<section id="contact" class="booking">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">Ready to travel?</div><h2>Tell us where you're going.</h2><p class="lead">Call or WhatsApp us with your pickup, destination and travel date. We'll help you choose the right vehicle.</p></div>
+  <div class="booking-box">
+   <div>
+    <a class="btn btn-red" href="tel:+917247805108">📞 Call 7247805108</a>
+    <a class="btn btn-light" style="margin-left:8px" href="https://wa.me/917247805108?text=Hello%20Gati%20Travels,%20please%20share%20a%20taxi%20quote.">💬 Get a Quote on WhatsApp</a>
+   </div>
+   <div class="contact-card">
+    <div class="contact-row"><div>📞</div><div><b>7247805108</b><span>Bookings & enquiries</span></div></div>
+    <div class="contact-row"><div>✉️</div><div><b>travelsgati@gmail.com</b><span>Email us anytime</span></div></div>
+    <div class="contact-row"><div>📍</div><div><b>Uttarakhand & All India</b><span>Local, sightseeing & outstation travel</span></div></div>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer><div class="container footer-row"><span>© 2026 Gati Travels. All rights reserved.</span><span>Your Journey, Our Responsibility.</span></div></footer>
+
+<div class="mobile-bar">
+ <a class="btn btn-red" href="tel:+917247805108">📞 Call</a>
+ <a class="btn btn-blue" href="https://wa.me/917247805108?text=Hello%20Gati%20Travels,%20I%20want%20to%20book%20a%20taxi.">💬 WhatsApp</a>
+</div>
 </body>
 </html>
